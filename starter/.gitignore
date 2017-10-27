@@ -1,0 +1,9 @@
+.DS_STORE
+/.env
+/.nyc_output
+/coverage
+/dist
+/logs
+/node_modules
+/notes.md
+/npm-debug.log

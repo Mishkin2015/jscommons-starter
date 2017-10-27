@@ -1,0 +1,76 @@
+{
+  "name": "PROJECT_SLUG",
+  "version": "0.0.0-development",
+  "description": "PROJECT_DESCRIPTION",
+  "main": "dist/service/factory.js",
+  "typings": "dist/service/factory.d.ts",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PROJECT_ORG/PROJECT_SLUG.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "acp": "git add -A && npm run commit && git push",
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "commit": "git-cz",
+    "cover-all": "nyc npm run test-all",
+    "cover-ci": "nyc npm run test-ci",
+    "duplication": "jscpd",
+    "lint": "tslint -p ./tsconfig.json",
+    "migrate": "node dist/presenter/cli/migrate.js",
+    "rollback": "node dist/presenter/cli/rollback.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "start": "node dist/presenter/express/server.js",
+    "test-all": "npm run test",
+    "test-ci": "npm run test",
+    "test": "mocha $(find dist -name '*.test.js') --timeout 6000 --exit"
+  },
+  "nyc": {
+    "lines": 100,
+    "check-coverage": true,
+    "exclude": [
+      "dist/config.js"
+    ]
+  },
+  "engines": {
+    "node": ">6.0.0",
+    "npm": ">3.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.14.1",
+    "jscommons": "^1.0.1",
+    "source-map-support": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "4.0.2",
+    "@types/express": "^4.0.39",
+    "@types/http-status-codes": "^1.0.29",
+    "@types/mocha": "2.2.43",
+    "@types/node": "8.0.47",
+    "@types/source-map-support": "0.4.0",
+    "@types/supertest": "2.0.3",
+    "@types/winston": "2.3.7",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
+    "jscpd": "0.6.15",
+    "mocha": "4.0.1",
+    "nyc": "11.2.1",
+    "rimraf": "2.6.2",
+    "semantic-release": "8.2.0",
+    "supertest": "3.0.0",
+    "tslint": "5.8.0",
+    "tslint-consistent-codestyle": "1.8.0",
+    "tslint-immutable": "4.4.0",
+    "typescript": "2.5.3"
+  }
+}
