@@ -9,6 +9,7 @@ Includes:
 - CI: Circle/Travis
 - Semantic Release via CI
 - Docker image building via CI
+- Renovate configuration for automatic dependency updates
 
 Usage:
 
